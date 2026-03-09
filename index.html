@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Clock</title>
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  background:#111;
+  color:#00ffcc;
+}
+#clock{
+  font-size:60px;
+  margin-top:20%;
+}
+</style>
+</head>
+
+<body>
+  <b>web Keramatullah </b>
+
+<h1>My Digital Clock</h1>
+<div id="clock"></div>
+
+<script>
+function updateClock(){
+  let now = new Date();
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+
+  if(h < 10) h = "0" + h;
+  if(m < 10) m = "0" + m;
+  if(s < 10) s = "0" + s;
+
+  document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+}
+
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>
